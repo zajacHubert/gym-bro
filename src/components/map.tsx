@@ -4,40 +4,56 @@ import { Marker, Popup } from 'react-leaflet';
 import { MapContainer } from 'react-leaflet/MapContainer';
 import { TileLayer } from 'react-leaflet/TileLayer';
 import { useMap } from 'react-leaflet/hooks';
-import L from 'leaflet';
 import styles from './map.module.css';
 import 'leaflet/dist/leaflet.css';
 import { icon } from 'leaflet';
-
-// const markerIcon = new L.Icon({
-//     iconUrl: require('../assets/marker.png'),
-//   iconUrl: require('leaflet/dist/images/marker-icon.png'),
-
-//   iconSize: [35, 41],
-// });
+import { User } from '@/types/user';
+import { useEffect, useState } from 'react';
+import { Localization } from '@/types/localization';
 
 const ICON = icon({
   iconUrl: '/marker.png',
   iconSize: [32, 32],
 });
 
-const Map = () => {
+interface MapProps {
+  users: User[];
+}
+
+const Map = ({ users }: MapProps) => {
+  const [currentLocalization, setCurrentLocalization] = useState<Localization>(
+    {} as Localization
+  );
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((test) =>
+      setCurrentLocalization({
+        latitude: test.coords.latitude,
+        longitude: test.coords.longitude,
+      })
+    );
+  }, []);
+
+  console.log('current', currentLocalization);
   return (
     <MapContainer
       center={[51.505, -0.09]}
       zoom={13}
-      scrollWheelZoom={false}
+      zoomControl={true}
+      // scrollWheelZoom={false}
       className={styles.mapContainer}
     >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-      />
-      <Marker icon={ICON} position={[51.505, -0.09]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+
+      {users.map((user) => (
+        <Marker
+          key={user.id}
+          icon={ICON}
+          position={[user.latitude, user.longitude]}
+        >
+          <Popup>{user.username}</Popup>
+        </Marker>
+      ))}
     </MapContainer>
   );
 };

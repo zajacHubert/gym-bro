@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Widoki
 
-## Getting Started
+1. Strona Główna (Home)
+   Cel: Przyciągnąć użytkowników i zachęcić ich do zarejestrowania się lub zalogowania.
+   Widok:
 
-First, run the development server:
+Przyciągający banner z hasłem przewodnim.
+Krótkie opisy kluczowych funkcji aplikacji.
+Przyciski „Zarejestruj się” i „Zaloguj się”. 2. Rejestracja (Register)
+Cel: Pozwolić użytkownikom na utworzenie konta.
+Widok:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Formularz rejestracyjny z polami na imię, nazwisko, email, hasło.
+Opcje rejestracji przez social media (Google, Facebook).
+Przyciski „Zarejestruj się” i link do strony logowania. 3. Logowanie (Login)
+Cel: Pozwolić użytkownikom na zalogowanie się do aplikacji.
+Widok:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Formularz logowania z polami na email i hasło.
+Opcje logowania przez social media.
+Przyciski „Zaloguj się” i link do strony rejestracji. 4. Profil Użytkownika (Profile)
+Cel: Umożliwić użytkownikom edycję swojego profilu i przeglądanie informacji.
+Widok:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pola do edycji danych osobowych: imię, nazwisko, wiek, dyscyplina sportowa, stopień zaawansowania.
+Sekcja do dodawania i edycji zdjęć profilowych.
+Przyciski „Zapisz zmiany” i „Edytuj profil”. 5. Wyszukiwanie Partnerów (Search)
+Cel: Umożliwić użytkownikom wyszukiwanie partnerów treningowych.
+Widok:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Filtry do wyszukiwania: dyscyplina sportowa, stopień zaawansowania, lokalizacja.
+Wyniki wyszukiwania w formie listy lub mapy.
+Przyciski „Szukaj” i „Resetuj filtry”. 6. Czat (Chat)
+Cel: Umożliwić użytkownikom komunikację.
+Widok:
 
-## Learn More
+Lista konwersacji.
+Okno czatu z historią wiadomości i polem do wpisywania nowych wiadomości.
+Powiadomienia o nowych wiadomościach. 7. Ustawienia (Settings)
+Cel: Umożliwić użytkownikom zarządzanie ustawieniami konta.
+Widok:
 
-To learn more about Next.js, take a look at the following resources:
+Opcje zmiany hasła, ustawienia powiadomień, prywatności.
+Przyciski „Zapisz zmiany” i „Wyloguj się”.
+Nawigacja
+Header:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Zawiera logo aplikacji.
+Linki do strony głównej, wyszukiwania partnerów, czatu, profilu użytkownika, ustawień (widoczne po zalogowaniu).
+Przyciski „Zaloguj się” i „Zarejestruj się” (widoczne tylko przed zalogowaniem).
+Sidebar/Bottombar (dla urządzeń mobilnych):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Ikony do szybkiego dostępu do głównych funkcji: Strona główna, Wyszukiwanie, Czat, Profil, Ustawienia.
+Widoczny na każdej podstronie dla łatwej nawigacji.
+Footer:
 
-## Deploy on Vercel
+Informacje o aplikacji (np. linki do polityki prywatności, warunków korzystania, kontaktu).
+Linki do mediów społecznościowych.
+Przebieg interakcji użytkownika
+Pierwsze uruchomienie:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Użytkownik widzi stronę główną z opcjami rejestracji i logowania.
+Po kliknięciu „Zarejestruj się”, użytkownik jest przenoszony do formularza rejestracyjnego.
+Po wypełnieniu formularza i rejestracji, użytkownik jest przenoszony do strony profilu, gdzie może uzupełnić dodatkowe informacje.
+Po zalogowaniu:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Użytkownik widzi zaktualizowaną nawigację z linkami do wyszukiwania, czatu, profilu i ustawień.
+Na stronie wyszukiwania użytkownik może przeglądać partnerów treningowych według wybranych kryteriów.
+Po znalezieniu odpowiedniego partnera, użytkownik może rozpocząć rozmowę poprzez czat.
+W ustawieniach użytkownik może dostosować swoje preferencje i zarządzać kontem.
+Taka struktura widoków i nawigacji zapewnia intuicyjne doświadczenie użytkownika, umożliwiając mu łatwe poruszanie się po aplikacji i korzystanie z jej funkcji.

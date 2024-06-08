@@ -1,9 +1,8 @@
-import Image from 'next/image';
-
-export default function Home() {
+export default function HomePage() {
   return (
     <section>
-      <h1>Home Page</h1>
+      <h2>Welocome to gym bro app!</h2>
+      <p>Login or register to find a new training partner</p>
     </section>
   );
 }
