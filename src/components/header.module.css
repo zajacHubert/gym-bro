@@ -1,0 +1,11 @@
+.header {
+  width: min(100% - 1rem, 93.75rem);
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}

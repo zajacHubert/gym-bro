@@ -1,6 +1,6 @@
-import { NextApiRequest } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { users } from '@/data/users';
 
-export function GET(req: NextApiRequest) {
-  return Response.json({ users });
+export async function GET(request: NextApiRequest, response: NextApiResponse) {
+  return response.json(users);
 }
