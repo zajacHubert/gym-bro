@@ -1,4 +1,6 @@
-export const users = [
+import { Level, User } from '@/types/user';
+
+export const users: User[] = [
   {
     id: 1,
     username: 'john_doe',
@@ -6,7 +8,7 @@ export const users = [
     email: 'john_doe@example.com',
     latitude: 40.712776,
     longitude: -74.005974,
-    level: 'intermediate',
+    level: Level.ADVANCED,
     profile_info:
       'Lubię biegać i jeździć na rowerze. Szukam partnera do wspólnych treningów.',
     sports: [
@@ -34,7 +36,7 @@ export const users = [
     email: 'jane_smith@example.com',
     latitude: 34.052235,
     longitude: -118.243683,
-    level: 'advanced',
+    level: Level.INTERMEDIATE,
     profile_info: 'Profesjonalna pływaczka, trenuję od 10 lat.',
     sports: [
       {
@@ -57,7 +59,7 @@ export const users = [
     email: 'mark_jones@example.com',
     latitude: 51.507351,
     longitude: -0.127758,
-    level: 'beginner',
+    level: Level.BEGINNER,
     profile_info:
       'Zaczynam przygodę z siłownią. Szukam kogoś do wspólnych treningów.',
     sports: [
