@@ -1,8 +1,8 @@
-import { API_URL } from '@/constants/api';
 import { User } from '@/types/user';
 
 export const getUsers = async (): Promise<User[]> => {
-  const res = await fetch(`${API_URL}/users`);
+  const res = await fetch('http://localhost:3001/api/users');
   const data = await res.json();
-  return data.users;
+  console.log('data', data)
+  return data;
 };

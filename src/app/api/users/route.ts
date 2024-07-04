@@ -10,7 +10,7 @@ export async function GET() {
               include: {
                 level: true,
               },
-            }, // Zawiera dane o sporcie
+            },
           },
         },
       },

@@ -4,6 +4,7 @@ import React from 'react';
 
 const MapPage = async () => {
   const users = await getUsers();
+  console.log(users)
   return (
     <div>
       <h2>Map</h2>

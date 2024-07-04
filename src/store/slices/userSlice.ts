@@ -1,4 +1,3 @@
-import { defaultUser } from '@/data/user';
 import { User } from '@/types/user';
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
@@ -8,7 +7,7 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  loggedUser: defaultUser,
+  loggedUser: {} as User,
 };
 
 export const userSlice = createSlice({

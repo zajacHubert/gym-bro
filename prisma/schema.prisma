@@ -32,7 +32,7 @@ model Sport {
 model Level {
   id      String    @id @default(uuid())
   name    String
-  sports  Sport[]   // A level can have many sports
+  sports  Sport[]   
 }
 
 model SportUser {
