@@ -1,29 +1,25 @@
-export enum Level {
-  BEGINNER = 'beginner',
-  INTERMEDIATE = 'intermediate',
-  ADVANCED = 'advanced',
-}
-
-export interface Picture {
-  id: number;
-  image_url: string;
-  is_primary: boolean;
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  password: string;
+  latitude?: number;
+  longitude?: number;
+  sports: Sport[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface Sport {
-  id: number;
-  sport_name: string;
+  id: string;
+  name: string;
+  levels: Level[];
 }
 
-export interface User {
-  id: number;
-  username: string;
-  password: string;
-  email: string;
-  latitude: number;
-  longitude: number;
-  level: Level;
-  profile_info: string;
+export interface Level {
+  id: string;
+  name: string;
   sports: Sport[];
-  profile_pictures: Picture[];
 }
